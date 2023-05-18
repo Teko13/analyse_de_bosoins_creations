@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Films de Plein Air</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand header-logo-container" href="index.html">
+                    <img src="./images/logo_noir.png" alt="logo les films de plein air">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="films.html">Films</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="actualites.html">Actualites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mentions-legales.html">Mentions legales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-custom">
+        <section class="news single-new">
+            <h1></h1>
+            <article>
+                <div class="featured-img new-feratured-img">
+                    <img src="" alt="">
+                </div>
+                <div class="date"></div>
+                <p>
+                    j
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h3>LES FILMS DE PLEIN AIR</h3>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="mentions-legales.html">mentions legales</a>
+            </li>
+        </ul>
+        <div class="social-icons">
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-tiktok"></i>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+    <script>
+        const data = localStorage.getItem('news');
+        const infos = JSON.parse(data);
+        const article = document.querySelector('section');
+        article.querySelector('h1').innerHTML = infos.titre;
+        article.querySelector('article .date').innerHTML = infos.date;
+        article.querySelector('article p').innerHTML = infos.content;
+        article.querySelector('article img').setAttribute("src", infos.imgUrl);
+    </script>
+</body>
+
+</html>
